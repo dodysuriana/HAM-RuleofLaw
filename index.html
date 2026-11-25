@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HAM & Rule of Law di Ruang Digital — Kelompok 4</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#f5f8fc;--surface:#fff;--ink:#0f1b2d;--mute:#52627a;--line:#dbe4f0;--brand:#0e7c86;--brand2:#e08a00;--hero1:#0b2a4a;--hero2:#0e7c86;--soft:#e6f3f4;--warn:#fff4dc;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a111d;--surface:#121c2c;--ink:#e8eef8;--mute:#9db0c9;--line:#25354d;--brand:#3cc4cf;--brand2:#ffb740;--hero1:#06182d;--hero2:#0b5d66;--soft:#10303a;--warn:#33270c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a111d;--surface:#121c2c;--ink:#e8eef8;--mute:#9db0c9;--line:#25354d;--brand:#3cc4cf;--brand2:#ffb740;--hero1:#06182d;--hero2:#0b5d66;--soft:#10303a;--warn:#33270c;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 "Plus Jakarta Sans",system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--hero1);z-index:30}
+h1,h2,h3{font-family:Sora,system-ui,sans-serif;line-height:1.2;margin:0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--hero1);display:flex;gap:4px;align-items:center;padding:10px 14px;overflow-x:auto;scrollbar-width:none}
+nav a,nav button{color:#dff3f5;text-decoration:none;font-size:13px;font-weight:700;padding:6px 11px;border-radius:99px;white-space:nowrap;background:none;border:0;cursor:pointer}
+nav a:hover,nav button:hover{background:rgba(255,255,255,.14)}
+nav b{color:#fff;font-family:Sora;margin-right:8px;white-space:nowrap}
+.hero{background:radial-gradient(circle at 80% 20%,var(--hero2),transparent 55%),var(--hero1);color:#fff;padding:56px 20px 70px;overflow:hidden}
+.wrap{max-width:1040px;margin:0 auto}
+.hero .wrap{display:grid;gap:28px;align-items:center}
+@media(min-width:800px){.hero .wrap{grid-template-columns:1.2fr .8fr}}
+.tag{display:inline-block;background:rgba(255,255,255,.14);padding:4px 12px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.04em}
+.hero h1{font-size:clamp(28px,6vw,46px);font-weight:800;margin:14px 0}
+.hero h1 span{color:#ffc65c}
+.hero p{color:#cfe6ea;max-width:52ch}
+.btn{display:inline-block;margin:8px 8px 0 0;padding:11px 20px;border-radius:12px;font-weight:700;text-decoration:none;background:#ffb740;color:#1b1200}
+.btn.o{background:none;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+.art{width:100%;max-width:340px;margin:auto}
+@media(prefers-reduced-motion:no-preference){.pulse{animation:p 3s ease-in-out infinite;transform-origin:center}.fl{animation:f 5s ease-in-out infinite}}
+@keyframes p{50%{opacity:.35;transform:scale(1.08)}}@keyframes f{50%{transform:translateY(-8px)}}
+section{padding:54px 20px}
+section:nth-of-type(even){background:var(--soft)}
+h2{font-size:clamp(24px,4.5vw,34px);font-weight:800;margin-bottom:6px}
+h2::after{content:"";display:block;width:54px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--brand),var(--brand2));margin-top:10px}
+.lead{color:var(--mute);max-width:70ch;margin:14px 0 26px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(14,124,134,.18)}
+.card .ic{font-size:30px;display:block;margin-bottom:8px}
+.card h3{font-size:17px;margin-bottom:6px}
+.card p{margin:0;color:var(--mute);font-size:14.5px}
+.num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;font:800 14px Sora;margin-bottom:8px}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:99px;background:var(--warn);color:var(--ink);border:1px solid var(--brand2);margin-left:6px;vertical-align:middle}
+.note{background:var(--warn);border-left:5px solid var(--brand2);padding:14px 16px;border-radius:12px;margin:22px 0;font-size:14.5px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.tabs button{font:700 14px "Plus Jakarta Sans";padding:9px 15px;border-radius:99px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+.panel ul{margin:8px 0 0;padding-left:20px}
+.pill{display:inline-block;margin:4px 6px 0 0;font-size:12.5px;font-weight:700;padding:3px 11px;border-radius:99px;background:var(--soft);color:var(--brand)}
+.steps{counter-reset:s;display:grid;gap:10px;padding:0;list-style:none}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px 12px 54px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:14px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:var(--brand2);color:#1b1200;display:grid;place-items:center;font:800 13px Sora}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px}
+.q button{display:block;width:100%;text-align:left;margin-top:8px;padding:10px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font:500 14.5px "Plus Jakarta Sans";cursor:pointer}
+.q button.ok{border-color:#1a9d57;background:rgba(26,157,87,.16)}.q button.no{border-color:#d6453d;background:rgba(214,69,61,.14)}
+.refs li{margin-bottom:12px;padding-left:2em;text-indent:-2em;font-size:14.5px}
+.refs a{color:var(--brand);word-break:break-all}
+.team{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.team .card{text-align:center}.av{width:54px;height:54px;border-radius:50%;margin:0 auto 8px;display:grid;place-items:center;color:#fff;font:800 18px Sora;background:linear-gradient(135deg,var(--brand),var(--brand2))}
+footer{background:var(--hero1);color:#bcd3d8;padding:30px 20px;font-size:13.5px;text-align:center}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav aria-label="Menu utama"><b>⚖️ HAM Digital</b>
+<a href="#beranda">Beranda</a><a href="#ham">HAM</a><a href="#rol">Rule of Law</a><a href="#hukum">Landasan Hukum</a><a href="#pelanggaran">Pelanggaran</a><a href="#data">Data Pribadi</a><a href="#etika">Etika</a><a href="#pancasila">Pancasila</a><a href="#kasus">Kasus</a><a href="#kuis">Kuis</a><a href="#pustaka">Pustaka</a><a href="#tim">Tim</a>
+<button id="th" aria-label="Ganti tema">◐</button></nav>
+
+<header class="hero" id="beranda"><div class="wrap"><div>
+<span class="tag">Pendidikan Pancasila · Project 2 · Kelompok 4</span>
+<h1>Hak Asasi Manusia &amp; <span>Rule of Law</span> di Ruang Digital</h1>
+<p>Teknologi memudahkan hidup, tetapi juga membuka risiko: privasi bocor, data pribadi tersebar, perundungan siber, dan diskriminasi. Website ini mengajak kita memahami hak, aturan, dan etika agar internet menjadi ruang yang aman dan adil untuk semua.</p>
+<a class="btn" href="#ham">Mulai belajar</a><a class="btn o" href="#kuis">Uji pemahaman</a></div>
+<svg class="art fl" viewBox="0 0 300 300" role="img" aria-label="Ilustrasi perisai dan gembok pelindung data">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3cc4cf"/><stop offset="1" stop-color="#ffb740"/></linearGradient></defs>
+<circle class="pulse" cx="150" cy="150" r="128" fill="none" stroke="#3cc4cf" stroke-width="2" stroke-dasharray="4 8"/>
+<circle class="pulse" cx="150" cy="150" r="100" fill="rgba(60,196,207,.10)"/>
+<path d="M150 42 232 74v66c0 58-36 92-82 112-46-20-82-54-82-112V74z" fill="url(#g)" opacity=".95"/>
+<path d="M150 62 214 87v54c0 46-28 74-64 92-36-18-64-46-64-92V87z" fill="#0b2a4a"/>
+<rect x="120" y="136" width="60" height="50" rx="9" fill="#ffb740"/>
+<path d="M130 136v-14a20 20 0 0 1 40 0v14" fill="none" stroke="#ffb740" stroke-width="9" stroke-linecap="round"/>
+<circle cx="150" cy="158" r="7" fill="#0b2a4a"/><rect x="147" y="160" width="6" height="14" rx="3" fill="#0b2a4a"/>
+<g fill="#fff"><circle cx="40" cy="70" r="6"/><circle cx="262" cy="110" r="6"/><circle cx="52" cy="232" r="6"/><circle cx="256" cy="228" r="6"/></g>
+<g stroke="#fff" stroke-opacity=".4" stroke-width="1.5"><path d="M40 70 100 100M262 110 205 120M52 232 100 205M256 228 205 205"/></g>
+</svg></div></header>
+
+<section id="tujuan"><div class="wrap rv"><h2>Tujuan Website</h2><p class="lead">Website edukasi ini dibuat Kelompok 4 sebagai media pencegahan (preventif) melalui pemahaman.</p><div class="grid" id="g-tujuan"></div></div></section>
+<section id="ham"><div class="wrap rv"><h2>Hak Asasi Manusia (HAM)</h2><p class="lead">HAM adalah seperangkat hak yang melekat pada hakikat manusia sebagai makhluk Tuhan Yang Maha Esa, wajib dihormati, dijunjung tinggi, dan dilindungi oleh negara, hukum, pemerintah, serta setiap orang.</p><h3 style="margin-bottom:12px">Jenis-jenis HAM</h3><div class="grid" id="g-ham"></div><h3 style="margin:28px 0 12px">HAM di ruang digital</h3><div class="grid" id="g-hamd"></div></div></section>
+<section id="rol"><div class="wrap rv"><h2>Rule of Law</h2><p class="lead">Prinsip bahwa seluruh masyarakat, termasuk pemerintah dan pengguna teknologi digital, tunduk pada hukum yang berlaku. Di ruang digital, ini berarti setiap aktivitas punya aturan dan batas, serta setiap orang bertanggung jawab atas tindakannya.</p><div class="grid" id="g-rol"></div></div></section>
+<section id="hukum"><div class="wrap rv"><h2>Landasan Hukum</h2><p class="lead">Peraturan yang menjadi dasar perlindungan HAM dan aktivitas digital di Indonesia.</p><div class="grid" id="g-hukum"></div>
+<div class="note"><b>Bedakan tiga hal.</b> Tidak semua perilaku buruk di internet adalah tindak pidana. <b>Pelanggaran etika</b> (misalnya komentar kasar yang tidak sampai mengancam), <b>pelanggaran hak</b> (misalnya foto diunggah tanpa izin), dan <b>perbuatan dengan konsekuensi hukum</b> (misalnya ancaman atau penyebaran data pribadi secara melawan hukum) memiliki penanganan yang berbeda. Untuk kasus nyata, konsultasikan ke pihak berwenang atau bantuan hukum.</div></div></section>
+<section id="pelanggaran"><div class="wrap rv"><h2>Bentuk Pelanggaran HAM di Ruang Digital</h2><p class="lead">Pilih salah satu bentuk pelanggaran untuk melihat definisi, contoh, hak yang berpotensi dilanggar, dan langkah pencegahan.</p><div class="tabs" id="tabs" role="tablist"></div><div class="panel" id="panel" role="tabpanel"></div></div></section>
+<section id="data"><div class="wrap rv"><h2>Perlindungan Data Pribadi</h2><p class="lead">Data pribadi adalah informasi tentang orang yang teridentifikasi atau dapat diidentifikasi. Hak atas privasi dan perlindungan data pribadi berakar pada Pasal 28G ayat (1) UUD 1945 dan diatur lebih rinci dalam UU No. 27 Tahun 2022. Hak subjek data mencakup antara lain memperoleh informasi, mengakses dan memperbaiki data, serta menarik persetujuan.</p><h3 style="margin-bottom:12px">5 kebiasaan menjaga data</h3><ol class="steps" id="s-data"></ol></div></section>
+<section id="etika"><div class="wrap rv"><h2>Etika Bermedia Sosial</h2><p class="lead">Kebebasan berpendapat dijamin, tetapi harus bertanggung jawab. Pakai 5 langkah <b>TAHAN</b> sebelum mengunggah atau berkomentar.</p><ol class="steps" id="s-etika"></ol></div></section>
+<section id="pancasila"><div class="wrap rv"><h2>Pancasila di Dunia Digital</h2><p class="lead">Nilai Pancasila menjadi kompas moral dalam menggunakan teknologi.</p><div class="grid" id="g-pancasila"></div></div></section>
+<section id="kasus"><div class="wrap rv"><h2>Kasus Simulasi <span class="badge">FIKTIF</span></h2><p class="lead">Kasus berikut rekaan untuk latihan analisis. Nama samaran, tidak merujuk pada orang nyata.</p>
+<div class="panel"><p><b>Situasi.</b> “Rani” (nama samaran), mahasiswa semester 1, mendapati foto dan nomor teleponnya diunggah di grup percakapan angkatan tanpa izin, disertai komentar yang merendahkan.</p>
+<p><b>Hak yang berpotensi dilanggar:</b> <span class="pill">Privasi</span><span class="pill">Perlindungan data pribadi</span><span class="pill">Rasa aman</span><span class="pill">Martabat</span></p>
+<p><b>Prinsip hukum yang relevan:</b> Pasal 28G ayat (1) UUD 1945, UU No. 27/2022, UU No. 39/1999, serta UU ITE (UU No. 1/2024) sebagai dasar penanganan konten elektronik.</p>
+<p><b>Solusi edukatif/preventif:</b></p><ul><li>Simpan bukti (tangkapan layar, tautan) tanpa menyebarkannya lagi.</li><li>Minta pengunggah menghapus; laporkan ke admin grup atau platform.</li><li>Laporkan ke pihak kampus atau pihak berwenang bila berlanjut; cari pendampingan.</li><li>Pencegahan: aturan grup, izin sebelum membagikan data orang lain.</li></ul></div></div></section>
+<section id="kuis"><div class="wrap rv"><h2>Cek Pemahaman</h2><p class="lead">4 pertanyaan singkat. Jawaban tidak disimpan, tidak ada login atau pengumpulan data.</p><div id="quiz"></div><p id="score" style="font-weight:700"></p></div></section>
+
+<section id="pustaka"><div class="wrap rv"><h2>Daftar Pustaka</h2><p class="lead">Gaya APA edisi ke-7. Status akreditasi mengikuti keterangan di situs resmi jurnal; <b>verifikasi akhir di portal SINTA</b> (sinta.kemdiktisaintek.go.id) sebelum laporan dikumpulkan.</p>
+<h3 style="margin:8px 0">Peraturan perundang-undangan</h3><ol class="refs">
+<li>Undang-Undang Dasar Negara Republik Indonesia Tahun 1945.</li>
+<li>Undang-Undang Nomor 39 Tahun 1999 tentang Hak Asasi Manusia.</li>
+<li>Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi.</li>
+<li>Undang-Undang Nomor 1 Tahun 2024 tentang Perubahan Kedua atas Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik.</li>
+<li>Peraturan Pemerintah Nomor 71 Tahun 2019 tentang Penyelenggaraan Sistem dan Transaksi Elektronik.</li></ol>
+<h3 style="margin:8px 0">Jurnal ilmiah</h3><ol class="refs" start="6">
+<li>Rinjani, M. A., &amp; Firmansyah, R. (2025). Hambatan implementasi UU 27/2022 dan strategi penguatan perlindungan data pribadi di Indonesia. <i>Jurnal Analisis Hukum, 8</i>(1), 70–83. <a href="https://doi.org/10.38043/jah.v8i1.6793">https://doi.org/10.38043/jah.v8i1.6793</a> <span class="badge">SINTA 5 (per situs jurnal)</span></li>
+<li>Kurniawati, H., &amp; Yunanto, Y. (2022). Perlindungan hukum terhadap penyalahgunaan data pribadi debitur dalam aktivitas pinjaman online. <i>Jurnal Ius Constituendum, 7</i>(1), 102–114. <a href="https://doi.org/10.26623/jic.v7i1.4290">https://doi.org/10.26623/jic.v7i1.4290</a> <span class="badge">SINTA 3 (per situs jurnal)</span></li>
+<li>Michelle Audrey Serena, Sandra Dwi Pahlawan, Shalom Inka Nauli. (2025). Perlindungan hukum bagi remaja korban cyberbullying: Analisis regulasi dan implementasi di Indonesia. <i>Jurnal Serina Sosial Humaniora, 3</i>(2), 158–167. <a href="https://doi.org/10.24912/jssh.v3i2.37153">https://doi.org/10.24912/jssh.v3i2.37153</a> <span class="badge">[lengkapi nama penulis · cek SINTA]</span></li>
+<li>Alhakim, A., Girsang, J., &amp; Wadhi, G. Y. (2023). Kajian yuridis sanksi pidana terhadap tindak pidana hate speech cyberbullying di Indonesia. <i>Legalitas: Jurnal Hukum, 15</i>(2). <a href="https://doi.org/10.33087/legalitas.v15i2.449">https://doi.org/10.33087/legalitas.v15i2.449</a> <span class="badge">[lengkapi halaman · cek SINTA]</span></li>
+<li>Amelia, S. (2024). Ruang cyber vs kebebasan berpendapat: Menyeimbangkan regulasi dan ekspresi di era digital. <i>Staatsrecht: Jurnal Hukum Kenegaraan dan Politik Islam, 4</i>(2). <span class="badge">[lengkapi halaman/DOI · cek SINTA]</span></li></ol>
+<h3 style="margin:8px 0">Prototype produk </h3><ol class="refs" start="11"><li>Kelompok 4. (2026). <i>Hak asasi manusia &amp; Rule of Law di ruang digital</i> [Website edukasi]. <a href="https://sites.google.com/view/ham-dan-rule-of-law-klmpk4/beranda">https://sites.google.com/view/ham-dan-rule-of-law-klmpk4/beranda</a></li></ol></div></section>
+
+<section id="tim"><div class="wrap rv"><h2>Tim Penyusun</h2><p class="lead">Kelompok 4 · Program Studi Teknik Informatika · Semester 1 · Dosen pengampu: Made Sri Astika Dewi, S.Pd., M.Pd.</p><div class="team" id="team"></div></div></section>
+<footer>© 2026 Kelompok 4 — Pendidikan Pancasila. Website ini bersifat edukasi umum, bukan nasihat hukum, dan tidak mengumpulkan data pengguna. Konten perlu diperbarui seiring perubahan peraturan.</footer>
+
+<script>
+var $=function(i){return document.getElementById(i)};
+function cards(id,a){$(id).innerHTML=a.map(function(x,i){return '<div class="card"><span class="'+(x[3]?'ic':'num')+'">'+(x[3]||(i+1))+'</span><h3>'+x[0]+(x[2]?' <span class="badge">'+x[2]+'</span>':'')+'</h3><p>'+x[1]+'</p></div>'}).join('')}
+function steps(id,a){$(id).innerHTML=a.map(function(x){return '<li><b>'+x[0]+'</b> — '+x[1]+'</li>'}).join('')}
+cards('g-tujuan',[["Pahami HAM digital","Meningkatkan pemahaman tentang HAM di ruang digital.",0,"🧭"],["Lindungi data","Edukasi perlindungan data pribadi.",0,"🔐"],["Sadar hukum","Meningkatkan kesadaran hukum dalam penggunaan teknologi.",0,"📜"],["Cegah perundungan","Mencegah perundungan dan diskriminasi di internet.",0,"🛡️"],["Bijak berteknologi","Mengajak masyarakat menggunakan teknologi secara bijak dan bertanggung jawab.",0,"🤝"]]);
+cards('g-ham',[["Hak hidup","Hak setiap manusia untuk mempertahankan kehidupannya.",0,"❤️"],["Hak pendidikan","Hak mendapatkan pendidikan yang layak.",0,"🎓"],["Hak berpendapat","Menyampaikan pikiran dan pendapat secara bertanggung jawab.",0,"🗣️"],["Hak keadilan","Perlakuan yang adil di hadapan hukum.",0,"⚖️"],["Hak beragama","Memeluk agama dan beribadah sesuai keyakinan.",0,"🕊️"]]);
+cards('g-hamd',[["Hak atas privasi","Menjaga kerahasiaan informasi dan kehidupan pribadi.",0,"🕶️"],["Perlindungan data pribadi","Mendapat perlindungan atas data pribadinya.",0,"🗄️"],["Kebebasan berpendapat","Menyampaikan pendapat lewat media digital secara bertanggung jawab.",0,"💬"],["Memperoleh informasi","Mengakses informasi yang dibutuhkan.",0,"🔎"],["Rasa aman","Memakai internet tanpa intimidasi, ancaman, atau perundungan.",0,"🌐"]]);
+cards('g-rol',[["Kepastian hukum","Aktivitas digital mengikuti peraturan yang berlaku."],["Persamaan di hadapan hukum","Setiap orang berkedudukan sama di hadapan hukum."],["Perlindungan hak","Hukum melindungi privasi dan hak digital masyarakat."],["Pertanggungjawaban","Tindakan yang melanggar hukum harus dipertanggungjawabkan."],["Keadilan","Pelanggaran digital ditangani secara objektif dan adil."]]);
+cards('g-hukum',[["UUD 1945 Pasal 28G","Perlindungan diri pribadi, kehormatan, martabat, dan harta benda.",0,"🏛️"],["UU No. 39 Tahun 1999","Mengatur Hak Asasi Manusia.",0,"🕯️"],["UU No. 27 Tahun 2022","Mengatur Pelindungan Data Pribadi.",0,"🔐"],["UU No. 1 Tahun 2024","Perubahan kedua atas UU Informasi dan Transaksi Elektronik.",0,"💻"],["PP No. 71 Tahun 2019","Penyelenggaraan Sistem dan Transaksi Elektronik (tambahan sesuai ketentuan dosen).","Tambahan","🧩"]]);
+var P=[
+["Pelanggaran privasi","Mengakses, menggunakan, atau menyebarkan informasi pribadi seseorang tanpa hak atau dasar yang sah.",["Membuka akun pribadi orang lain tanpa izin","Menyebarkan percakapan pribadi","Mengunggah foto seseorang tanpa memperhatikan hak privasinya"],["Privasi","Rasa aman"],"Gunakan kata sandi kuat, minta izin sebelum membagikan foto atau percakapan."],
+["Perundungan siber","Menyakiti, mempermalukan, mengintimidasi, atau merendahkan seseorang melalui media digital.",["Menghina lewat komentar media sosial","Menyebarkan rumor untuk mempermalukan","Mengirim pesan ancaman atau intimidasi"],["Rasa aman","Martabat"],"Berhenti menanggapi pelaku, simpan bukti, laporkan ke platform dan pihak terpercaya."],
+["Penyebaran data pribadi tanpa izin","Informasi seseorang dibagikan ke publik tanpa hak atau dasar hukum yang sesuai.",["Menyebarkan nomor telepon pribadi","Mengunggah alamat rumah seseorang","Membagikan dokumen identitas kepada pihak tidak berwenang"],["Perlindungan data pribadi","Privasi"],"Sensor data sensitif, bagikan hanya seperlunya, dan pahami tujuan pengumpulan data."],
+["Diskriminasi digital","Perlakuan tidak adil di ruang digital karena perbedaan identitas, latar belakang, kondisi, atau karakteristik tertentu.",["Menghina seseorang karena latar belakangnya","Mengucilkan dari komunitas digital secara diskriminatif","Menyebarkan konten kebencian terhadap kelompok tertentu"],["Perlakuan setara","Martabat"],"Moderasi komunitas yang adil, laporkan konten kebencian, dan jangan ikut menyebarkannya."],
+["Penyalahgunaan teknologi","Penggunaan perangkat atau sistem digital untuk tindakan yang merugikan orang lain.",["Membuat akun palsu untuk menipu","Menyebarkan informasi palsu yang merugikan","Mengakses informasi tanpa izin"],["Rasa aman","Keadilan"],"Verifikasi sumber sebelum membagikan, waspada akun mencurigakan, aktifkan verifikasi dua langkah."]];
+var tb=$('tabs');
+P.forEach(function(p,i){var b=document.createElement('button');b.textContent=String.fromCharCode(65+i)+'. '+p[0];b.setAttribute('role','tab');b.onclick=function(){show(i)};tb.appendChild(b)});
+function show(i){var p=P[i];Array.prototype.forEach.call(tb.children,function(b,j){b.setAttribute('aria-selected',j===i)});
+$('panel').innerHTML='<h3>'+p[0]+'</h3><p>'+p[1]+'</p><b>Contoh:</b><ul>'+p[2].map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul><p><b>Hak yang berpotensi dilanggar:</b> '+p[3].map(function(x){return '<span class="pill">'+x+'</span>'}).join('')+'</p><p><b>Pencegahan:</b> '+p[4]+'</p>'}
+show(0);
+steps('s-data',[["Bagikan seperlunya","Berikan data hanya yang benar-benar dibutuhkan layanan."],["Baca tujuan","Pahami untuk apa data dikumpulkan sebelum menyetujui."],["Amankan akun","Kata sandi unik dan verifikasi dua langkah."],["Sensor identitas","Tutup nomor KTP, alamat, dan data sensitif saat membagikan dokumen."],["Hormati data orang lain","Minta izin sebelum memuat foto atau kontak orang lain."]]);
+steps('s-etika',[["Tunda","Beri jeda sebelum mengunggah saat emosi."],["Akurasi","Cek kebenaran dan sumber informasi."],["Hormati","Pastikan tidak merendahkan atau mendiskriminasi."],["Antisipasi dampak","Pikirkan akibatnya bagi orang lain."],["Nyatakan dengan santun","Sampaikan kritik tanpa menyerang pribadi."]]);
+cards('g-pancasila',[["Sila 1","Menghormati martabat manusia dan nilai moral; tidak menghina keyakinan orang lain di komentar.",0,"🕊️"],["Sila 2","Kemanusiaan yang adil dan beradab; menjaga privasi dan menolak perundungan.",0,"🤲"],["Sila 3","Persatuan; tidak menyebar ujaran kebencian yang memecah belah.",0,"🇮🇩"],["Sila 4","Berpendapat secara demokratis dan bertanggung jawab; berdiskusi sehat.",0,"🗳️"],["Sila 5","Keadilan dan perlindungan hukum yang setara bagi semua pengguna internet.",0,"⚖️"]]);
+var Q=[["Menyebarkan nomor telepon seseorang tanpa izin termasuk…",["Penyebaran data pribadi tanpa izin","Kebebasan berpendapat","Etika yang baik"],0],["Prinsip Rule of Law yang menyatakan semua orang berkedudukan sama adalah…",["Pertanggungjawaban","Persamaan di hadapan hukum","Kepastian hukum"],1],["Pasal UUD 1945 yang melindungi diri pribadi, kehormatan, dan martabat adalah…",["Pasal 28G","Pasal 28E","Pasal 33"],0],["Menurut website ini, langkah terbaik saat melihat konten kebencian adalah…",["Membagikannya agar viral","Melaporkan dan tidak ikut menyebarkan","Membalas dengan hinaan"],1]];
+var done=0,ok=0;$('quiz').innerHTML=Q.map(function(q,i){return '<div class="q"><b>'+(i+1)+'. '+q[0]+'</b>'+q[1].map(function(o,j){return '<button data-q="'+i+'" data-o="'+j+'">'+o+'</button>'}).join('')+'</div>'}).join('');
+$('quiz').addEventListener('click',function(e){var b=e.target;if(b.tagName!=='BUTTON'||b.parentNode.dataset.d)return;var q=Q[b.dataset.q],c=+b.dataset.o===q[2];b.className=c?'ok':'no';if(!c)b.parentNode.children[q[2]+1].className='ok';b.parentNode.dataset.d=1;done++;if(c)ok++;if(done===Q.length)$('score').textContent='Skor: '+ok+' dari '+Q.length+(ok===Q.length?' — luar biasa!':' — pelajari lagi materi di atas.')});
+var T=[["Ni Kadek Sri Komala Dewi","2655201007"],["I Made Dody Suriana","2655201009"],["Justin Hosea Oktavius","2655201013"],["I Putu Oka Fernanda","2655201010"]];
+$('team').innerHTML=T.map(function(t){return '<div class="card"><div class="av">'+t[0].charAt(0)+'</div><h3>'+t[0]+'</h3><p>NIM '+t[1]+'</p></div>'}).join('');
+var io=window.IntersectionObserver?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08}):null;
+document.querySelectorAll('.rv').forEach(function(el){io?io.observe(el):el.classList.add('in')});
+$('th').onclick=function(){var r=document.documentElement,d=r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme:dark)').matches);r.dataset.theme=d?'light':'dark'};
+</script>
+</body>
+</html>
